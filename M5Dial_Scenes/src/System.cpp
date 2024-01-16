@@ -26,12 +26,12 @@ void init_system() {
     USBSerial.begin(921600);
 
     init_encoder();
+    init_encoderN(GPIO_NUM_19, GPIO_NUM_20, 250, PCNT_UNIT_1, PCNT_CHANNEL_1);  // added to test
 
     auto cfg = M5.config();
     // Don't enable the encoder because M5's encoder driver is flaky
     M5Dial.begin(cfg, false, false);
     touch.setFlickThresh(30);
-
     if (!LittleFS.begin(FORMAT_LITTLEFS_IF_FAILED)) {
         log_println("LittleFS Mount Failed");
         return;

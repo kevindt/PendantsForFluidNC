@@ -11,6 +11,7 @@
 #include <LittleFS.h>
 #include "M5Dial.h"
 #include "Encoder.h"
+#include "EncoderN.h"
 
 // #define UART_ON_PORT_B // Not recommended, see below
 
